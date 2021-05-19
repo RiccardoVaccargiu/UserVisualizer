@@ -5,11 +5,9 @@ const Header = () => {
 
     return (
         <>
-        <Box style={{height: '50px', display: 'flex', justifyContent: 'center',background: 'black', color: 'white'}}>
+        <Box className={LayoutStyles.appbar}>
             welcome
-        
         </Box>
-        <Button>HELLO</Button>
         </>
     )
 }

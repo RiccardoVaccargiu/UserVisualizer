@@ -7,15 +7,16 @@ import usersStyles from '../styles/userslist.module.css'
 const UsersList = () => {
 
     const BASE_URL = 'https://gorest.co.in/public-api/users?page=';
-    const [page, setPage] = useState(0);
-    const [usersUrl, setUsersUrl] = useState(BASE_URL);
+    const [page, setPage] = useState(1);
+    const [usersUrl, setUsersUrl] = useState(BASE_URL+1);
     const [users, setUsers] = useState([]);
 
     useEffect( async() => {
 
-        await axios.get(usersUrl+`${page}`)
+        await axios.get(usersUrl)
         .then((response) => {
-
+            console.log(response)
+            setPage(response.data.meta.pagination.page+1)
             /*if(response.data.meta.pagination.page <= response.data.meta.pagination.pages){
                 setPage(response.data.meta.pagination.page) //saving next page only if exists
             }*/
@@ -26,16 +27,8 @@ const UsersList = () => {
 
     }, [usersUrl])
 
-    useEffect(() => {
-
-        console.log(users)
-    }, [users])
-
     const loadMore = () => {
 
-        console.log("PAGE: ",page)
-        console.log(usersUrl+page)
-        setPage(page+1)
         setUsersUrl(BASE_URL+page)
         
     }
