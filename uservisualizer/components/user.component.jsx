@@ -5,13 +5,15 @@ import userStyles from '../styles/usercomponent.module.css'
 const User = ({ user }) => {
 
     return(
+        <div>
         <Card className={userStyles.card}>
-        {user.name}
-        {user.email}
-        {user.gender}
-        {user.id}
-        {user.status}
+        {user.name}<br />
+        {user.email}<br />
+        {user.gender}<br />
+        {user.id}<br />
+        {user.status}<br />
         </Card>
+        </div>
     )
 }
 
