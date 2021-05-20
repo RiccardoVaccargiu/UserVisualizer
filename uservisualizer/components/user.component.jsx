@@ -6,8 +6,9 @@ import userStyles from '../styles/usercomponent.module.css';
 const User = ({ user }) => {
 
     return(
-        <div>
-        <Link href="/user">{/*each card is a link to user specs*/}
+        <div style={{margin: 'auto'}}>
+        <Link href='/user/[id]' as={`/user/${user.id}`}>{/*each card is a link to user specs*/}
+            <a>
             <Card className={userStyles.card}>
                 <CardHeader
                 avatar={
@@ -20,6 +21,7 @@ const User = ({ user }) => {
                 {user.email}<br />
                 {user.status}<br />
             </Card>
+            </a>
         </Link>
         </div>
     )

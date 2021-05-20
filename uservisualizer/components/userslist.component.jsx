@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from 'axios';
 import User from './user.component';
-import { GridList, ListItem } from "@material-ui/core";
+import { GridList, ListItem, Button } from "@material-ui/core";
 import usersStyles from '../styles/userslist.module.css'
 
 const UsersList = () => {
@@ -35,12 +35,14 @@ const UsersList = () => {
 
     return(
         <div>
-            <div style={{width: '100%', display: 'flex', flexWrap: 'wrap'}}>
+            <div className={usersStyles.container}>
                 {users.map((user, index) => (
                     <User key={index} user={user} />
                 ))}
             </div>
-            <button onClick={loadMore}>Load More</button>
+            <div className={usersStyles.buttonContainer}>
+            <Button className={usersStyles.button} color="primary" variant="outlined" onClick={loadMore}>Load More</Button>
+            </div>
         </div>
 
 

@@ -8,3 +8,9 @@
     flex-direction: row;
 
 }
+
+.card :hover {
+
+    background: #cecece;
+    cursor: pointer;
+}
