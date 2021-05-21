@@ -1,10 +1,15 @@
-.appbar {
+.headerbox {
 
     height: 80px;
     padding: 15px;
     justify-content: center;
     font-size: larger;
     font-weight: 600;
-    background: black;
+    background: #1c1c1c;
     color: white;
+}
+
+.search {
+
+    background: red;
 }

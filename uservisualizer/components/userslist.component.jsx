@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import axios from 'axios';
 import User from './user.component';
-import { GridList, ListItem, Button } from "@material-ui/core";
+import { Button } from "@material-ui/core";
 import usersStyles from '../styles/userslist.module.css'
+
 
 const UsersList = () => {
 
@@ -41,7 +42,7 @@ const UsersList = () => {
                 ))}
             </div>
             <div className={usersStyles.buttonContainer}>
-            <Button className={usersStyles.button} color="primary" variant="outlined" onClick={loadMore}>Load More</Button>
+            <Button color="secondary" className={usersStyles.button} variant="outlined" onClick={loadMore}>Load More</Button>
             </div>
         </div>
 

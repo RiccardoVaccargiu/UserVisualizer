@@ -1,13 +1,16 @@
-import { AppBar, Button, Box } from '@material-ui/core'
-import LayoutStyles from '../styles/layout.module.css'
+import layoutStyles from '../styles/layout.module.css'
+import Search from './search.component'
 
 const Header = () => {
 
     return (
         <>
-        <Box className={LayoutStyles.appbar}>
+        <div className={layoutStyles.headerbox}>
             welcome
-        </Box>
+        </div>
+        <div classNmae={layoutStyles.search}>
+            <Search />
+        </div>
         </>
     )
 }
