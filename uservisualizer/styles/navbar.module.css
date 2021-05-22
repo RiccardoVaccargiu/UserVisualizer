@@ -5,3 +5,12 @@
     flexGrow: 1;
     
 }
+
+.button {
+
+}
+
+.button:hover{
+    
+    background: #cecece;
+}

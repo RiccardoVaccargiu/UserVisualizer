@@ -26,14 +26,20 @@ const Username = ({ user }) => {
 export const getServerSideProps = async(context) => {
 
     let user = {};
-    
     await axios.get(`https://gorest.co.in/public-api/users?name=${context.params.name}`)
     .then(res => {
         user = res.data.data[0]
         console.log("fetch: ", res)
     })
-    .catch(err => console.log("ciao"))
-
+    
+    if(!user){ //redirecting to home page when the searched user does not exist
+        return {
+            redirect: {
+                destination: '/',
+                permanent: false,
+              },
+        }
+    }
     
     return{
         props: {

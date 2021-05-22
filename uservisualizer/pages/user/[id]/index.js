@@ -20,52 +20,18 @@ const user = ({ user }) => {
     )
 }
 
-//called at build time on server-side
-export const getStaticProps = async(context) => {
+export const getServerSideProps = async(context) => {
 
     let user = {};
     await axios.get(`https://gorest.co.in/public-api/users?id=${context.params.id}`)
-    .then(res => {
-        user=res.data.data[0]
-    })
-    .catch(() => console.log("This user does not exist..."))
-    
-    
-    return {
-        //object with the props that will be received by the page component (index.js)
+    .then(
+        res => {user = res.data.data[0]}
+    )
+
+    return{
         props: {
             user
         }
-    }
-}
-
-//called at build time on server-side.
-//defines a list of paths that have to be rendered
-export const getStaticPaths = async() =>  {
-
-    let user = {};
-    let ids;
-    let paths;
-    await axios.get(`https://gorest.co.in/public-api/users`)
-    .then(res => {
-        
-        ids = res.data.data.map(user => 
-            user.id
-        )
-
-        //saving path to pre-render
-        paths = ids.map(id => (
-            {params: {id: id.toString()}}
-        ))
-
-            console.log("PATH: ",paths)
-        //user=res.data.data[0]
-    })
-    .catch(() => console.log("This user does not exist..."))
-    
-    return{
-        paths,
-        fallback: false //any page not return by getStaticPaths will resolve in a 404 page
     }
 }
 

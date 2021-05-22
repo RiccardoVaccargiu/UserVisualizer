@@ -6,14 +6,14 @@ import userStyles from '../styles/usercomponent.module.css';
 const User = ({ user }) => {
 
     return(
-        <div style={{margin: 'auto'}}>
+        <div className={userStyles.container}>
         {/*passing id to user\[id] page so every time a new user is requested his info are rendered*/}
         <Link href='/user/[id]' as={`/user/${user.id}`}>{/*each card is a link to user specs*/}
             <a>
             <Card className={userStyles.card}>
                 <CardHeader
                 avatar={
-                <Avatar aria-label="recipe">
+                <Avatar>
                     {user.name.charAt(0)}
                 </Avatar>
                 }

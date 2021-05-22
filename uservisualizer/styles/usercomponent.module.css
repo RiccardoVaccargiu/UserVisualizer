@@ -9,8 +9,14 @@
 
 }
 
-.card :hover {
+.container {
 
-    background: #cecece;
+    margin: auto;
+
+}
+
+.container :hover {
+
+    background: #e8e8e8;
     cursor: pointer;
 }
