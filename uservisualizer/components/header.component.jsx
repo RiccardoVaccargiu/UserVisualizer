@@ -8,7 +8,7 @@ const Header = () => {
         <>
         <div className={layoutStyles.headerbox}>
             <div className={layoutStyles.title}>Welcome, here you can check the users</div>
-            <div>
+            <div className={layoutStyles.search}>
                 <Search />
             </div>
         </div>

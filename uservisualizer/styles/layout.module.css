@@ -7,17 +7,20 @@
     font-weight: 600;
     background: #1c1c1c;
     color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
 }
 
 .title {
-
-    width: 400px;
-    float: left;
+    
+    min-width: 350px;
     margin: 10px 700px 0px 0px;
-
 }
 
-.search {
-
-    float: right;
+@media screen and (max-width: 750px) {
+    .title {
+        
+        margin: 10px 0px 0px 0px;
+    }
 }

@@ -22,6 +22,9 @@ const useStyles = makeStyles({
           borderColor: '#f50057',
         },
       },
+      '@media(maxWidth:750px)' : {
+        width: '100px'
+      },
     },
 
     input: {
