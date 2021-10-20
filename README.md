@@ -5,7 +5,7 @@
 
 1. Dowload the zipped project folder
 2. Unzip the folder
-3. In the terminal, move into the project folder: ../UserVisualizer-main/
+3. In the terminal, move into the project folder: ../UserVisualizer-main/uservisualizer
 4. Type `npm install` in order to install node_modules
 
 Now, in the terminal you can type:
